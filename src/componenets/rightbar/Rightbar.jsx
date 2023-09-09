@@ -9,6 +9,7 @@ import { CircularProgress } from '@material-ui/core';
 import 'react-modern-drawer/dist/index.css';
 
 //here cuser is logined user and user is the general user
+axios.defaults.withCredentials = true
 
 
 const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -85,9 +86,15 @@ function Rightbar({user}){
 
         useEffect(()=>{
             const fetchFriends = async () => {
+                try{
                 const friend = await axios.get('/users/friends/' + user._id)
                 setFriends(friend.data)
                 setLoad(false);
+                }catch(err)
+                {
+                    console.log(err)
+                    fetchFriends();
+                }
             };
             fetchFriends()
         },[user._id])
@@ -186,7 +193,7 @@ function Rightbar({user}){
                     <form onSubmit={submitInfoHandler} className="promptContainer" >
                     
                     <input type="text" placeholder="Age" className="data" key={1} value={age} onChange={(e)=>{setAge(e.target.value)}}  />
-                    <input type="text" placeholder="Relationship" className="data" key={2} value={relationship} onChange={(e)=>{setRelationship(e.target.value)}}  />
+                    <input type="text" placeholder="Me in a word" className="data" key={2} value={relationship} onChange={(e)=>{setRelationship(e.target.value)}}  />
                     <input type="text" placeholder="Work at" className="data" value={workat} key={3} onChange={(e)=>{setWorkat(e.target.value)}} />
                     <button  type="submit" className="subtn" >Update</button>
                     </form>
@@ -221,7 +228,8 @@ function Rightbar({user}){
     const [joke,setJoke] = useState();
         useEffect(()=>{ const callJoke = async ()=>{
             const data=await axios.get('https://icanhazdadjoke.com/',{headers : {
-                Accept: "application/json"
+                Accept: "application/json",
+                'Access-Control-Allow-Origin' : "*"
             }});
             setJoke(data.data.joke);
             console.log(data);

@@ -12,7 +12,7 @@ function Post({reRender}){
 
 const desc = useRef();
 const {user} = useContext(AuthContext);
-const [file,setFile] = useState(null);
+const [fileImg,setFileImg] = useState(null);
 
 const submitHandler = async (e) => {
     
@@ -22,12 +22,12 @@ const submitHandler = async (e) => {
           desc:desc.current.value,
      }
 
-     if(file)
+     if(fileImg)
      {
           const data = new FormData();
-          const fileName =  Date.now() + file.name;
+          const fileName =  Date.now() + fileImg.name;
           // const file = new File(file, fileName);
-          data.append("file",file,fileName);
+          data.append("file",fileImg,fileName);
           // data.append("name",fileName);
           newPost.img = fileName;
 
@@ -47,7 +47,7 @@ const submitHandler = async (e) => {
      }
      reRender(Math.random())
      desc.current.value=""
-     setFile(null)
+     setFileImg(null)
      
 }
 
@@ -65,20 +65,20 @@ const submitHandler = async (e) => {
     <div className="post-mid">
          <textarea className="post-content" placeholder="What's on your mind?" ref={desc}></textarea>
     </div> 
-    {file && (
+    {fileImg && (
      <div className="shareImgContainer">
-          <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
-          <Cancel className="cancelShareImg" onClick={()=>{setFile(null)}} />
+          <img src={URL.createObjectURL(fileImg)} alt="" className="shareImg" />
+          <Cancel className="cancelShareImg" onClick={()=>{setFileImg(null)}} />
      </div>
     )}
     <div className="bottom-icons">
      <div className="bottom-left">
      
-    <label htmlFor="file" className="picUpload">
+    <label htmlFor="fileImg" className="picUpload">
     <Photo className=" photo" />
      <span className="pointer">Photo or Video</span>
-     <input type="file" id="file" accept=".png,.jpeg,.jpg" style={{ display : "none" }} onChange={(e)=>{
-          setFile(e.target.files[0])
+     <input type="file" id="fileImg" accept=".png,.jpeg,.jpg" style={{ display : "none" }} onChange={(e)=>{
+          setFileImg(e.target.files[0])
      }} />
     </label>
      

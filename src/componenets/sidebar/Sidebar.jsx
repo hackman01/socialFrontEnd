@@ -34,12 +34,19 @@ function Sidebar(){
 
 useEffect(() => {
   const fetchFriends = async () =>{
+    try{
     const friends = await axios.get(`/users/followers/${cuser._id}`)
     setUsers(friends.data);
     setLoad(false);
+    }
+    catch(err)
+    {
+      console.log(err);
+      fetchFriends();
+    }
   }
   fetchFriends();
-},[])
+},[cuser._id])
 
     return <div className="sidebar">
       <div className="sidebar-container">
