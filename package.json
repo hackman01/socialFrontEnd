@@ -41,5 +41,5 @@
     ]
   },
   
-  "proxy": "https://social-back-end.vercel.app/api/"
+  "proxy": "https://socialbackend-production.up.railway.app/api/"
 }
