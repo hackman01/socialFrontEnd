@@ -41,5 +41,5 @@
     ]
   },
   
-  "proxy": "http://localhost:8000/api/"
+  "proxy": "https://socialbackend-production.up.railway.app/api/"
 }
