@@ -42,7 +42,7 @@ useEffect(() => {
     catch(err)
     {
       console.log(err);
-      fetchFriends();
+      // fetchFriends();
     }
   }
   fetchFriends();

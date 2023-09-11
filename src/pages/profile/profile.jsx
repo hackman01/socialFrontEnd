@@ -38,10 +38,10 @@ const changeCoverHandler = async (e) =>{
     if(file)
      {
           const data = new FormData();
-          const fileName =  file.name;
+          const fileName = Date.now() + file.name;
        
-          data.append("file",file);
-          data.append("name",fileName);
+          data.append("file",file,fileName);
+          
           newPost.coverPic = fileName;
 
           try{
@@ -73,10 +73,10 @@ const changeProfileHandler = async (e) =>{
     if(pImg)
      {
           const data = new FormData();
-          const fileName =  pImg.name;
+          const fileName = Date.now() + pImg.name;
        
-          data.append("file",pImg);
-          data.append("name",fileName);
+          data.append("file",pImg,fileName);
+          
           newPost.profilePic = fileName;
 
           try{

@@ -27,7 +27,8 @@ function Feeds({cuser}){
         setLoad(false)
     }
     catch(err){
-        fetchPosts();
+        // fetchPosts();
+        console.log(err)
     }
      }
      fetchPosts();
