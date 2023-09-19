@@ -1,9 +1,9 @@
 
-import {React,useEffect,useState,useContext} from "react";
+import {React,useEffect,useState,useContext,useRef} from "react";
 import { AuthContext } from "../../context/AuthContext"; 
 import { Link } from 'react-router-dom';
 import './Rightbar.css';
-
+import { Users } from '../../pages/dummyData.js';
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import 'react-modern-drawer/dist/index.css';
@@ -25,16 +25,16 @@ const Friend = ({user}) => {
     </>
 }
 
-// const Online = ({user}) =>{
-//     return <div className="friend">
-//     <div className="active-user">
-//     <img src={user.profilePic?PF+user.profilePic : PF+"person/noAvatar.png"} alt="user" className="user" />
-//     <span className="on"></span>
-//     </div>
-//     <span className="friend-name">{user.username}</span>
+const Online = ({user}) =>{
+    return <div className="friend">
+    <div className="active-user">
+    <img src={user.profilePic?PF+user.profilePic : PF+"person/noAvatar.png"} alt="user" className="user" />
+    <span className="on"></span>
+    </div>
+    <span className="friend-name">{user.username}</span>
 
-// </div>
-// }
+</div>
+}
 
 
 
