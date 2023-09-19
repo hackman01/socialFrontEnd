@@ -2,7 +2,7 @@ import React, { useEffect,useContext } from "react";
 import './Feed.css';
 import { useState } from "react";
 import {Comment, Send, ThumbUp} from '@material-ui/icons';
-import { Users,Posts } from '../../pages/dummyData.js';
+
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';

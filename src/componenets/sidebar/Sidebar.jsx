@@ -3,7 +3,7 @@ import { useState,useEffect,useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import './Sidebar.css';
 import axios from 'axios';
-import {RssFeed, Chat,  Work,  PlayCircleFilledOutlined,  GroupAdd} from '@material-ui/icons';
+import {RssFeed, Chat,  GroupAdd} from '@material-ui/icons';
 import { CircularProgress } from '@material-ui/core';
 
 import { Link } from 'react-router-dom';

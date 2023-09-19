@@ -1,6 +1,6 @@
 import React, { useContext,useRef ,useState} from "react";
 import './Feed.css';
-import {Cancel, Label, LocationOn, Photo, TagFaces} from '@material-ui/icons';
+import {Cancel,  Photo} from '@material-ui/icons';
 import {AuthContext} from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
