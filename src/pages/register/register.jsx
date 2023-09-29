@@ -1,7 +1,7 @@
-import {React,useRef,useHistory,useContext} from 'react';
+import {React,useRef,useContext} from 'react';
 import './register.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+
 import { loginCall } from '../../apiCalls';
 import { AuthContext } from '../../context/AuthContext';
 import { CircularProgress } from '@material-ui/core';
@@ -16,7 +16,7 @@ export default function Register() {
   const workat = useRef();
   const age = useRef();
   const { isFetching,dispatch } = useContext(AuthContext);
-  const history = useNavigate();
+ 
 
   const handleClick = async (e)=>{
 

@@ -1,7 +1,7 @@
 import React, { useContext,useEffect,useState } from "react";
 import './Topbar.css';
 import axios from "axios";
-import { Search, Person, Chat, Notifications,Face, ExitToApp } from "@material-ui/icons";
+import { Search, Face, ExitToApp } from "@material-ui/icons";
 
 import { Link } from 'react-router-dom';
 import {AuthContext} from '../../context/AuthContext';
