@@ -22,7 +22,7 @@ const [err,setErr] = useState(false)
     }
     
   }
-  // console.log(user);
+  console.log(user);
 
   return (
     
