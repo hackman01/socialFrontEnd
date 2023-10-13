@@ -14,10 +14,10 @@ const { user, isFetching, error, dispatch } = useContext(AuthContext);
 const [err,setErr] = useState(false)
   const handleClick = async (e) =>{
     e.preventDefault();
-    
+    try{
     await loginCall({ email:email.current.value , password:password.current.value},dispatch);
-    if(!user)
-    {
+    }catch(err){
+    
       setErr(true)
     }
     
